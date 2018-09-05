@@ -1,0 +1,7 @@
+#! /usr/bin/env python3
+from gevent.wsgi import WSGIServer
+from app import app
+import config
+
+http_server = WSGIServer(('', config.PORT), app)
+http_server.serve_forever()
